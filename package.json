@@ -2,6 +2,7 @@
   "name": "boggle",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://primaryobjects.github.io/boggle"
   "devDependencies": {
     "react-scripts": "0.9.0"
   },

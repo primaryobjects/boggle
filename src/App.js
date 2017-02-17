@@ -7,7 +7,12 @@ class App extends Component {
     super(props);
 
     this.state = {
-      board: [],
+      board: [
+        ['D', 'G', 'H', 'I'],
+        ['K', 'L', 'P', 'S'],
+        ['Y', 'E', 'U', 'T'],
+        ['E', 'O', 'R', 'N']
+      ],
       alert: '',
       words: []
     };
@@ -28,7 +33,7 @@ class App extends Component {
     worker.postMessage({ board: that.state.board });
     worker.onmessage = function(message) {
       if (message.data.status.indexOf('Solving') !== -1 || message.data.done) {
-        that.setState({ alert: message.data.status, alertText: message.data.status });
+        that.setState({ alert: message.data.status });
       }
       else if (message.data.result) {
         var words = that.state.words;
@@ -43,7 +48,7 @@ class App extends Component {
       <div id="main-app">
         <div className="row">
           <div className="col s5 offset-s3">
-            <GridControl onChange={this.onGridChange}></GridControl>
+            <GridControl onChange={this.onGridChange} value={this.state.board}></GridControl>
           </div>
           <div className="div-results col s3">
             <table className="word-results highlight">

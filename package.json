@@ -9,8 +9,7 @@
     "jsonfile": "^2.4.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-material-snackbar": "^2.0.1",
-    "react-native-workers": "^0.3.1"
+    "react-material-snackbar": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

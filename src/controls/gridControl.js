@@ -57,70 +57,66 @@ export default class gridControl extends Component {
   render() {
     return (
       <div className="grid-control">
-        <div className="row">
-          <div className="col s12 offset-s4">
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <CellControl x="0" y="0" onChange={this.onChange} ref={(input) => { this.cell00 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="1" y="0" onChange={this.onChange} ref={(input) => { this.cell10 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="2" y="0" onChange={this.onChange} ref={(input) => { this.cell20 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="3" y="0" onChange={this.onChange} ref={(input) => { this.cell30 = input }}></CellControl>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <CellControl x="0" y="1" onChange={this.onChange} ref={(input) => { this.cell01 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="1" y="1" onChange={this.onChange} ref={(input) => { this.cell11 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="2" y="1" onChange={this.onChange} ref={(input) => { this.cell21 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="3" y="1" onChange={this.onChange} ref={(input) => { this.cell31 = input }}></CellControl>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <CellControl x="0" y="2" onChange={this.onChange} ref={(input) => { this.cell02 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="1" y="2" onChange={this.onChange} ref={(input) => { this.cell12 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="2" y="2" onChange={this.onChange} ref={(input) => { this.cell22 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="3" y="2" onChange={this.onChange} ref={(input) => { this.cell32 = input }}></CellControl>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <CellControl x="0" y="3" onChange={this.onChange} ref={(input) => { this.cell03 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="1" y="3" onChange={this.onChange} ref={(input) => { this.cell13 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="2" y="3" onChange={this.onChange} ref={(input) => { this.cell23 = input }}></CellControl>
-                  </td>
-                  <td>
-                    <CellControl x="3" y="3" onChange={this.onChange} ref={(input) => { this.cell33 = input }}></CellControl>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <CellControl x="0" y="0" onChange={this.onChange} ref={(input) => { this.cell00 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="1" y="0" onChange={this.onChange} ref={(input) => { this.cell10 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="2" y="0" onChange={this.onChange} ref={(input) => { this.cell20 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="3" y="0" onChange={this.onChange} ref={(input) => { this.cell30 = input }}></CellControl>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <CellControl x="0" y="1" onChange={this.onChange} ref={(input) => { this.cell01 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="1" y="1" onChange={this.onChange} ref={(input) => { this.cell11 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="2" y="1" onChange={this.onChange} ref={(input) => { this.cell21 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="3" y="1" onChange={this.onChange} ref={(input) => { this.cell31 = input }}></CellControl>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <CellControl x="0" y="2" onChange={this.onChange} ref={(input) => { this.cell02 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="1" y="2" onChange={this.onChange} ref={(input) => { this.cell12 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="2" y="2" onChange={this.onChange} ref={(input) => { this.cell22 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="3" y="2" onChange={this.onChange} ref={(input) => { this.cell32 = input }}></CellControl>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <CellControl x="0" y="3" onChange={this.onChange} ref={(input) => { this.cell03 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="1" y="3" onChange={this.onChange} ref={(input) => { this.cell13 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="2" y="3" onChange={this.onChange} ref={(input) => { this.cell23 = input }}></CellControl>
+              </td>
+              <td>
+                <CellControl x="3" y="3" onChange={this.onChange} ref={(input) => { this.cell33 = input }}></CellControl>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }   

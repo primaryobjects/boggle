@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
       board: [],
       alert: '',
-      words: ''
+      words: []
     };
 
     this.onGridChange = this.onGridChange.bind(this);
@@ -32,7 +32,7 @@ class App extends Component {
       }
       else if (message.data.result) {
         var words = that.state.words;
-        words += ',' + message.data.result.word + ' (' + message.data.result.score + ')';
+        words.push(message.data.result);
         that.setState({ words: words });
       }
     }
@@ -40,14 +40,37 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <GridControl onChange={this.onGridChange}></GridControl>
+      <div id="main-app">
         <div className="row">
-          <div className="col s8 offset-s4">
-            <a className="waves-effect waves-light btn solve-btn" onClick={this.onSolve}><i className="material-icons fa fa-sort-alpha-asc right"></i>Solve</a>
+          <div className="col s5 offset-s3">
+            <GridControl onChange={this.onGridChange}></GridControl>
           </div>
-          <div className="col s4">
-            <textarea value={this.state.words}></textarea>
+          <div className="div-results col s3">
+            <table className="word-results highlight">
+              <thead>
+                <tr>
+                  <th>Word</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  this.state.words.sort(function(a, b) { return b.score - a.score; }).map(function(word, i) {
+                    return (
+                      <tr key={i}>
+                        <td>{word.word}</td>
+                        <td>{word.score}</td>
+                      </tr>
+                    )
+                  })
+                }
+              </tbody>
+            </table>
+          </div>          
+        </div>
+        <div className="row">
+          <div className="col s5 offset-s3">
+            <a className="waves-effect waves-light btn solve-btn" onClick={this.onSolve}><i className="material-icons fa fa-sort-alpha-asc right"></i>Solve</a>
           </div>
         </div>
         <SnackBar snackBarText={this.state.alert} timer={6000} show={this.state.alert ? true : false} />

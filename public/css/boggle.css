@@ -1,0 +1,27 @@
+.grid-control table {
+  width: 0;
+}
+
+.cell-control {
+  border: 1px solid #fdd;
+  width: 50px;
+  height: 50px;
+}
+
+.cell-control:hover {
+  border: 3px solid #fdd;
+}
+
+.cell-control input {
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cell-control input:hover {
+  background-color: #35aaff;
+}
+
+.solve-btn {
+	margin-left: 50px;
+}

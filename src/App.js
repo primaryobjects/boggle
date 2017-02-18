@@ -28,19 +28,22 @@ class App extends Component {
   onSolve() {
     var that = this;
 
-    // Start web worker.
-    var worker = new Worker('js/boggle/solveManagerWorker.js');
-    worker.postMessage({ board: that.state.board });
-    worker.onmessage = function(message) {
-      if (message.data.status.indexOf('Solving') !== -1 || message.data.done) {
-        that.setState({ alert: message.data.status });
+    // Reset state.
+    this.setState({ words: [], alert: '' }, function() {
+      // Start web worker.
+      var worker = new Worker('js/boggle/solveManagerWorker.js');
+      worker.postMessage({ board: that.state.board });
+      worker.onmessage = function(message) {
+        if (message.data.status.indexOf('Solving') !== -1 || message.data.done) {
+          that.setState({ alert: message.data.status });
+        }
+        else if (message.data.result) {
+          var words = that.state.words;
+          words.push(message.data.result);
+          that.setState({ words: words });
+        }
       }
-      else if (message.data.result) {
-        var words = that.state.words;
-        words.push(message.data.result);
-        that.setState({ words: words });
-      }
-    }
+    });
   };
 
   render() {

@@ -20,6 +20,50 @@ At each step of discovering adjacent letters beyond 3 characters, we check the s
 
 The process is continued, constructing a tree for each letter across the board, until all game board tiles have been evaluated.
 
+Consider the example game board and solution word shown below.
+
+![Finding a word in Boggle](https://github.com/primaryobjects/boggle/raw/master/public/example.jpg "Finding a word in Boggle")
+
+An example of a minimal [tree](https://github.com/primaryobjects/boggle/blob/master/example.R), composed from this example is shown below. Notice how the child nodes from `S`, include `U`, followed by a child node `P`, `E`, `R`, forming the word `SUPER` at a depth of 4 in the tree.
+
+```
+S  <---              
+ ¦--I            
+ ¦--H            
+ ¦--P            
+ ¦--U  <---          
+ ¦   ¦--P  <---      
+ ¦   ¦   ¦--H    
+ ¦   ¦   ¦--G    
+ ¦   ¦   ¦--L    
+ ¦   ¦   °--E  <--- 
+ ¦   ¦       °--R  <---
+ ¦   ¦--L        
+ ¦   ¦--E        
+ ¦   ¦--O        
+ ¦   ¦--R        
+ ¦   ¦--N        
+ ¦   °--T        
+ °--T 
+```
+
+The solution word `SUPER` is then located in the dictionary hash, under the key `SUP`, as shown below.
+
+```
+Dictionary      
+ ¦--SUP
+ ¦   ¦--SUPER <---
+ ¦   ¦--SUPPER  
+ ¦   ¦--SUPPOSE 
+ ¦   ¦--SUPPOSED
+ ¦   ¦--SUPPORT 
+ ¦   °--SUPRISE 
+ °--TRI         
+     ¦--TRINITY 
+     ¦--TRIP    
+     °--TRIPOD 
+```
+
 UI Design
 ---------
 

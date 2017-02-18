@@ -78,7 +78,7 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col s5 offset-s3">
-            <a className="waves-effect waves-light btn solve-btn" onClick={this.onSolve}><i className="material-icons fa fa-sort-alpha-asc right"></i>Solve</a>
+            <a className="waves-effect waves-light btn solve-btn purple accent-2" onClick={this.onSolve}><i className="material-icons fa fa-sort-alpha-asc right"></i>Solve</a>
           </div>
         </div>
         <SnackBar snackBarText={this.state.alert} timer={6000} show={this.state.alert ? true : false} />
